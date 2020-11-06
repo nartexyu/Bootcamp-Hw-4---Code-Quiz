@@ -1,0 +1,37 @@
+.main {
+    position: relative;
+}
+.start {
+    z-index: 1;
+    position: absolute;
+    left: 25%;
+    translate(-50%,-50%);
+}
+
+.quiz {
+    z-index: 2;
+    position: absolute;
+    left: 25%;
+    translate(-50%,-50%);
+}
+
+.submit {
+    z-index: 3;
+    position: absolute;
+    left: 25%;
+    translate(-50%,-50%);
+}
+
+.result {
+    z-index: 4;
+    position: absolute;
+    left: 25%;
+    top: 900%;
+}
+
+.scores {
+    z-index: 5;
+    position: absolute;
+    left: 25%;
+    translate(-50%,-50%);
+}
