@@ -1,4 +1,4 @@
-var highScoreEl = document.querySelector(".high-score");
+var highScoreBtn = document.querySelector(".high-score");
 var timerEl = document.querySelector(".timer");
 var secondsLeft = 60;
 var startEl = document.querySelector(".start");
@@ -141,18 +141,21 @@ function endQuiz(){
 
 //allows user to input their name and stores their name and score
 function submit() {
-    submitEl.addEventListener("click", function(event) {
+    submitButtonEl.addEventListener("click", function(event) {
         event.preventDefault();
         scoresArr.push({name: inputEl.value, value: secondsLeft});
         scoresArr.sort(function(a,b) {
             return b.value - a.value;
         });
         localStorage.setItem("storedScore", JSON.stringify(scoresArr));
+        submitEl.style.display = "none";
+        scores();
     });
 };
 
 //displays high scores list and go back and clear buttons
 function scores(){
+    scoresEl.style.display = "block";
     
 };
 
@@ -164,7 +167,7 @@ function clearScores(){
     if (confirm("Clear high scores?")===true){
         var ol = document.querySelector(".list")
         scoresArr = [];
-        //scoresEl.style.display = "none";
+        scoresEl.style.display = "none";
         ol.remove();
         localStorage.clear()
     };
@@ -175,4 +178,3 @@ function clearScores(){
 start();
 qofq();
 submit();
-scores();
